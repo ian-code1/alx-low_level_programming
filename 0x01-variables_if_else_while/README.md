@@ -1,0 +1,1 @@
+This si the readme for variables and stuff
