@@ -1,0 +1,1 @@
+this is the Readme for this directory . here we dealing with functions and nested loops 
