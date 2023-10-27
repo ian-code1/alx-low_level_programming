@@ -1,0 +1,1 @@
+this is the readme for this directory. we ae dealing with Pointers, arrays and strings
