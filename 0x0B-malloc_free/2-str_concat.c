@@ -24,10 +24,9 @@ while (s2[len2] != '\0')
 {
 len2++;
 }
-ptr = malloc(sizeof(char) + (len1 + len2 + 1));
+ptr = malloc(sizeof(char) * (len1 + len2 + 1));
 if (ptr == NULL)
 {
-free(ptr);
 return (NULL);
 }
 for (i = 0; i < len1; i++)
