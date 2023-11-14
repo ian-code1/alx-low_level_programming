@@ -29,7 +29,9 @@ return (NULL);
 for (c = height = 0; str[c] != '\0'; c++)
 	if (str[c] != ' ' && (str[c + 1] == ' ' || str[c + 1] == '\0'))
 		height++;
-aout = malloc(sizeof(char *) * (height));
+if (height == 0)
+	return (NULL);
+aout = malloc(sizeof(char *) * (height + 1));
 if (aout == NULL)
 {
 free(aout);
