@@ -1,0 +1,65 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+
+/**
+ * multiply - function to multiply two numbers represented as strings
+ * @num1: first number as string
+ * @num2: second number as string
+ *
+ * Return: integer result of the multiplication
+ */
+int multiply(char *num1, char *num2)
+{
+int result = 0;
+while (*num1)
+{
+int digit1 = *num1 - '0';
+int carry = 0;
+char *temp_num2 = num2;
+while (*temp_num2 || carry)
+{
+int digit2 = (*temp_num2) ? *temp_num2 - '0' : 0;
+int product = (digit1 * digit2) + carry;
+result += product % 10;
+carry = product / 10;
+if (*temp_num2)
+temp_num2++;
+else
+break;
+}
+num1++;
+}
+return (result);
+}
+/**
+ * main - entry point of the program
+ * @argc: argument count
+ * @argv: argument vector
+ *
+ * Return: 0 on success, 98 on error
+ */
+int main(int argc, char *argv[])
+{
+if (argc != 3)
+{
+printf("Error\n");
+return (98);
+}
+for (int i = 1; i < argc; i++)
+{
+char *num = argv[i];
+while (*num)
+{
+if (!isdigit(*num))
+{
+printf("Error\n");
+return (98);
+}
+num++;
+}
+}
+int result = multiply(argv[1], argv[2]);
+printf("%d\n", result);
+return (0);
+}
